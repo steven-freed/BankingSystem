@@ -4,7 +4,7 @@ This multi-threaded banking system uses a client and server with C sockets to pr
 ## Client
 Parses user commands to check if they are correct before being sent to the server. Parses responses from the server.
 
-Response: 1st bit is the command, consecutive bits are account name or amount data
+Response: 1st byte is the command, consecutive bytes are account name or amount data
 
 ## Server
 Accepts the following commands:
