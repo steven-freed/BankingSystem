@@ -17,4 +17,4 @@ query - prints user's balance
 end - ends the session with the account being served
 quit - quits the client/server connection
 ```
-account names max characters are 255 (bits).
+account name max length is 255 bytes.
