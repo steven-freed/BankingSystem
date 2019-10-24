@@ -401,20 +401,10 @@ void* listenToServ(void* args)
 			size -= status;
 		}
 		
-		// checks for broken pipe between client and server
-		/*if (status == 0 && nRead == 0)
-		{
-			fprintf(fp, "\nBroken pipe. Disconnected from server.\n");
-			writeQuit(session, 1);
-			if (isQuitting == 1) break;
-		} else {*/
-		
 		if (nRead < 0)
 		{ 
 			fprintf(fperr, "ERROR reading from socket");
 		}
-	
-	//	}
 		
 		if (isQuitting == -1)
 		{
@@ -438,9 +428,7 @@ int main(int argc, char** argv)
 	{
 		write(STDERR, "ERROR: incorrect number of arguments entered, please follow the format './executable [host name] [port number]'.\n", 113);
 		return 0;
-	}	
-
-	//signal(SIGPIPE, signal_callback_handler);		
+	}		
 
 	char* host = argv[1];
 	int port = atoi(argv[2]);
